@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaimin George | Digital Marketing Specialist</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9eaff',
+              200: '#bcdbff',
+              400: '#5ba2ff',
+              500: '#2b7fff',
+              600: '#0066ff',
+              700: '#0052cc',
+              800: '#0043a8',
+              900: '#052c6e',
+            },
+            darkSurface: '#08111e',
+            darkCard: '#0f1d32'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 75% 35%, rgba(0, 102, 255, 0.18) 0%, rgba(2, 6, 23, 0) 65%);
+    }
+    .service-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+    }
+    .service-card-shadow:hover {
+      box-shadow: 0 16px 30px -4px rgba(0, 102, 255, 0.12), 0 6px 12px -2px rgba(0, 102, 255, 0.08);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
+
+  <!-- Toast Notification Modal -->
+  <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none max-w-md bg-slate-900 text-white p-4 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700">
+    <div class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold">Message Sent Successfully!</h4>
+      <p class="text-xs text-slate-300">Thank you! Jaimin George will contact you shortly.</p>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-600/30 group-hover:scale-105 transition-transform duration-200">
+          JG
+        </div>
+        <div>
+          <div class="text-lg font-extrabold tracking-tight text-white leading-none">Jaimin George</div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-brand-400 block mt-1">Digital Marketing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#home" class="text-brand-400 transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#work" class="hover:text-white transition-colors">Portfolio</a>
+        <a href="#industries" class="hover:text-white transition-colors">Industries</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#blog" class="hover:text-white transition-colors">Blog</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden md:flex items-center">
+        <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition-all duration-200 shadow-md shadow-brand-600/30 hover:shadow-lg hover:shadow-brand-600/40 hover:-translate-y-0.5">
+          Get Free Consultation
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-6 space-y-4 text-center">
+      <a href="#home" class="block text-brand-400 py-1 text-base font-semibold mobile-nav-link">Home</a>
+      <a href="#about" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">About</a>
+      <a href="#services" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Services</a>
+      <a href="#work" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Portfolio</a>
+      <a href="#industries" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Industries</a>
+      <a href="#pricing" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Pricing</a>
+      <a href="#blog" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Blog</a>
+      <a href="#contact" class="block text-slate-300 hover:text-white py-1 text-base font-medium mobile-nav-link">Contact</a>
+      <div class="pt-3">
+        <a href="#contact" class="inline-block w-full py-3 rounded-full bg-brand-600 text-white font-semibold text-sm mobile-nav-link">
+          Get Free Consultation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative bg-slate-950 text-white overflow-hidden hero-glow pt-14 pb-24 md:pt-20 md:pb-32">
+      <!-- Ambient Background Graphic -->
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Hero Text -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/15 border border-brand-500/30 text-brand-400 text-xs sm:text-sm font-semibold tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+              Jaimin George | Digital Marketing
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+              Turn Clicks Into <br class="hidden sm:inline">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-brand-500">Customers</span>
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+              I help businesses grow online with result-driven digital marketing strategies. From SEO to Social Media, I make sure your brand reaches the right audience and gets real results.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 hover:translate-x-0.5">
+                <span>Get Free Consultation</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+
+              <a href="#services" class="inline-flex items-center px-7 py-3.5 rounded-full bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-white font-semibold text-sm sm:text-base transition-all duration-200">
+                Explore Services
+              </a>
+            </div>
+
+            <!-- Mini verification chips -->
+            <div class="pt-4 flex items-center gap-6 text-xs text-slate-400">
+              <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-brand-400"></i> Data-Backed Strategy
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-brand-400"></i> High-ROI Campaigns
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual Desk/Laptop Component -->
+          <div class="lg:col-span-6 relative">
+            <div class="relative mx-auto max-w-lg lg:max-w-none">
+              <!-- Glow behind workstation -->
+              <div class="absolute -inset-2 bg-gradient-to-r from-brand-600 to-cyan-500 rounded-2xl blur-xl opacity-30"></div>
+              
+              <!-- Laptop / Desk Image Showcase with Overlay Badge -->
+              <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Digital Marketing Workspace" 
+                  class="w-full h-80 sm:h-96 object-cover brightness-90 hover:scale-105 transition-transform duration-500"
+                  onerror="this.src='https://placehold.co/800x600/0f172a/ffffff?text=Marketing+Analytics'"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+
+                <!-- Floated Analytics Card in laptop mockup -->
+                <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center text-lg">
+                      <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-medium text-slate-400">Strategy Matrix</div>
+                      <div class="text-sm font-bold text-white">Better Strategy, Bigger Results</div>
+                    </div>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    +250% Growth
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Title Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 mb-2 inline-block">
+            Our Services
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Digital Marketing Solutions
+          </h2>
+          <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Everything you need to grow your brand online. I offer complete digital marketing services to help you get more visibility, leads and sales.
+          </p>
+        </div>
+
+        <!-- 8 Services Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- 1. SEO -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-200">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">SEO</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Improve your search engine rankings and get organic traffic.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Google Ads -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-xl mb-5 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-200">
+                <i class="fa-brands fa-google"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Google Ads</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Run targeted ad campaigns and get instant results.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Social Media Marketing -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-pink-50 text-pink-500 flex items-center justify-center gap-1.5 text-base mb-5 group-hover:bg-gradient-to-tr group-hover:from-pink-500 group-hover:to-brand-500 group-hover:text-white transition-all duration-200">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f text-xs"></i>
+                <i class="fa-brands fa-linkedin-in text-xs"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Social Media Marketing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Build your brand and engage with your audience.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. Meta Ads -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-5 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-200">
+                <i class="fa-brands fa-meta"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Meta Ads</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Increase reach and boost conversions with powerful Meta campaigns.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5. Content Marketing -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-200">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Content Marketing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Create valuable content that attracts and converts.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6. Website Development -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-200">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Website Development</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Modern, fast and mobile-friendly websites.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7. Google Analytics -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center text-xl mb-5 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-200">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Google Analytics</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Track performance and make data-driven decisions.
+              </p>
+            </div>
+          </div>
+
+          <!-- 8. Email Marketing -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/80 service-card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center text-xl mb-5 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-200">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Email Marketing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Nurture leads and bring back customers.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Content -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600">
+              Why Choose Me
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              More Than Just Marketing
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              I don't just run campaigns — I focus on your goals. With the right strategy, creative ideas and data-driven approach, I help you get real results and long-term growth.
+            </p>
+
+            <!-- 4 Features Badges -->
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-sm shrink-0">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-slate-800">Result-Driven Strategies</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-sm shrink-0">
+                  <i class="fa-regular fa-comments"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-slate-800">Transparent Communication</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-sm shrink-0">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-slate-800">On-Time Delivery</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-sm shrink-0">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-slate-800">Dedicated Support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle Counters -->
+          <div class="lg:col-span-3 flex flex-col justify-center space-y-6 sm:space-y-8 py-4 border-l-0 lg:border-l border-slate-200 lg:pl-10">
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-brand-600">100+</div>
+              <div class="text-sm font-medium text-slate-600 mt-1">Happy Clients</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-brand-600">150+</div>
+              <div class="text-sm font-medium text-slate-600 mt-1">Campaigns Managed</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-brand-600">5+</div>
+              <div class="text-sm font-medium text-slate-600 mt-1">Years of Experience</div>
+            </div>
+          </div>
+
+          <!-- Right Lifestyle Desk Visual: PLAN CREATE ANALYZE GROW -->
+          <div class="lg:col-span-4">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100 group">
+              <img 
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" 
+                alt="Marketing Planning notebook" 
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/600x600/f8fafc/334155?text=Plan+Create+Analyze+Grow'"
+              />
+              <div class="absolute inset-0 bg-slate-900/40 flex items-end p-6">
+                <div class="bg-white/90 backdrop-blur-md rounded-xl p-4 w-full shadow-lg border border-white/60">
+                  <div class="text-xs font-bold uppercase tracking-widest text-brand-600">Execution Framework</div>
+                  <div class="text-sm font-extrabold text-slate-900 mt-0.5 tracking-wide">
+                    PLAN • CREATE • ANALYZE • GROW
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left: Portrait Photo -->
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" 
+                alt="Jaimin George Portrait" 
+                class="w-full h-[430px] object-cover object-top hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/600x750/0f172a/ffffff?text=Jaimin+George'"
+              />
+              <div class="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-md rounded-xl p-3.5 text-white flex items-center justify-between border border-slate-700/60">
+                <div>
+                  <h4 class="text-sm font-bold">Jaimin George</h4>
+                  <p class="text-xs text-brand-400">Digital Strategist</p>
+                </div>
+                <span class="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center text-xs">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: About description & 3 Core Values -->
+          <div class="lg:col-span-7 space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600">
+              About Me
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Hi, I'm Jaimin George
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              I'm a digital marketing enthusiast with a passion for helping businesses grow online. With a strong understanding of SEO, ads, social media and content strategy, I create custom solutions that bring real results.
+            </p>
+            <p class="text-brand-600 font-semibold text-sm sm:text-base">
+              Let's work together to take your brand to the next level.
+            </p>
+
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all duration-200 shadow-md shadow-brand-600/30">
+              <span>Get In Touch</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+
+            <!-- 3 Mini Value Cards -->
+            <div class="space-y-3.5 pt-4">
+              <div class="p-4 rounded-xl bg-white border border-slate-200/80 flex items-start gap-4 shadow-sm hover:border-brand-200 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg shrink-0">
+                  <i class="fa-regular fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Creative Thinking</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Fresh ideas for your brand</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-slate-200/80 flex items-start gap-4 shadow-sm hover:border-brand-200 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg shrink-0">
+                  <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Data Driven</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Decisions backed by insights</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-slate-200/80 flex items-start gap-4 shadow-sm hover:border-brand-200 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg shrink-0">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Goal Focused</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">Your success is my priority</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header row with "View All Projects" button -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600">
+              Our Work
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">
+              Recent Projects & Results
+            </h2>
+            <p class="text-slate-600 text-sm mt-2">
+              Here are some of the campaigns and projects I've worked on. Real strategies. Measurable results.
+            </p>
+          </div>
+          <div>
+            <a href="#contact" class="px-5 py-2.5 rounded-full border border-brand-600 text-brand-600 hover:bg-brand-50 text-sm font-semibold transition-colors duration-200 inline-block">
+              View All Projects
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 KPI Work Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Project 1 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 service-card-shadow flex flex-col justify-between group hover:border-brand-300 transition-all duration-200">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center text-lg">
+                  <i class="fa-brands fa-google"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Google Ads Campaign</h3>
+                  <span class="text-xs text-slate-500">E-commerce Brand</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">+250%</div>
+                  <div class="text-xs text-slate-500 font-medium">Increase in Sales</div>
+                </div>
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">3.2x</div>
+                  <div class="text-xs text-slate-500 font-medium">ROAS</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-6 flex justify-end">
+              <span class="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-brand-600 group-hover:text-white text-slate-400 flex items-center justify-center text-xs transition-colors">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 service-card-shadow flex flex-col justify-between group hover:border-brand-300 transition-all duration-200">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-pink-50 text-pink-500 flex items-center justify-center text-lg">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Social Media Marketing</h3>
+                  <span class="text-xs text-slate-500">Fashion Brand</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">+180%</div>
+                  <div class="text-xs text-slate-500 font-medium">Engagement Rate</div>
+                </div>
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">12K+</div>
+                  <div class="text-xs text-slate-500 font-medium">New Followers</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-6 flex justify-end">
+              <span class="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-brand-600 group-hover:text-white text-slate-400 flex items-center justify-center text-xs transition-colors">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 service-card-shadow flex flex-col justify-between group hover:border-brand-300 transition-all duration-200">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">SEO Optimization</h3>
+                  <span class="text-xs text-slate-500">Service Business</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">+300%</div>
+                  <div class="text-xs text-slate-500 font-medium">Organic Traffic</div>
+                </div>
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">Top 3</div>
+                  <div class="text-xs text-slate-500 font-medium">Keyword Rankings</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-6 flex justify-end">
+              <span class="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-brand-600 group-hover:text-white text-slate-400 flex items-center justify-center text-xs transition-colors">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 service-card-shadow flex flex-col justify-between group hover:border-brand-300 transition-all duration-200">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Website Development</h3>
+                  <span class="text-xs text-slate-500">Real Estate</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">+150%</div>
+                  <div class="text-xs text-slate-500 font-medium">Lead Generation</div>
+                </div>
+                <div>
+                  <div class="text-xl font-extrabold text-brand-600">2.5x</div>
+                  <div class="text-xs text-slate-500 font-medium">Conversion Rate</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-6 flex justify-end">
+              <span class="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-brand-600 group-hover:text-white text-slate-400 flex items-center justify-center text-xs transition-colors">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="py-20 bg-slate-50 border-y border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 mb-2 inline-block">
+            Industries
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+            Industries I Serve
+          </h2>
+          <p class="mt-3 text-slate-600 text-sm">
+            I work with businesses from various industries, helping them achieve their unique goals through digital marketing.
+          </p>
+        </div>
+
+        <!-- Industries Icon Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+          
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">E-commerce</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Real Estate</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Education</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-bed"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Hospitality</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Healthcare</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Startups</span>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-slate-200/80 text-center hover:border-brand-500 hover:shadow-md transition-all group col-span-2 sm:col-span-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-shop"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-slate-800">Local Business</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 mb-2 inline-block">
+            Pricing
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Simple & Transparent Pricing
+          </h2>
+          <p class="mt-3 text-slate-600 text-sm sm:text-base">
+            Choose a plan that fits your goals. Or get a custom plan for your business needs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Starter Plan -->
+          <div class="rounded-3xl p-8 bg-white border border-slate-200 service-card-shadow flex flex-col justify-between hover:border-slate-300 transition-all">
+            <div>
+              <div class="text-base font-bold text-slate-900">Starter Plan</div>
+              <p class="text-xs text-slate-500 mt-1">Perfect for small businesses</p>
+
+              <div class="mt-6 mb-6">
+                <span class="text-4xl font-extrabold text-slate-900">₹9,999</span>
+                <span class="text-slate-500 text-sm font-medium">/month</span>
+              </div>
+
+              <ul class="space-y-3.5 text-sm text-slate-600 border-t border-slate-100 pt-6">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Basic SEO</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Social Media Management</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Monthly Report</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3 rounded-xl border border-brand-600 text-brand-600 hover:bg-brand-50 font-semibold text-sm transition-colors">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Growth Plan (Most Popular) -->
+          <div class="relative rounded-3xl p-8 bg-white border-2 border-brand-600 shadow-xl shadow-brand-600/10 flex flex-col justify-between -translate-y-2 lg:-translate-y-3">
+            <!-- Most Popular Badge -->
+            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-brand-600 text-white text-xs font-bold uppercase tracking-wider shadow">
+              Most Popular
+            </div>
+
+            <div>
+              <div class="text-base font-bold text-slate-900">Growth Plan</div>
+              <p class="text-xs text-slate-500 mt-1">For growing brands</p>
+
+              <div class="mt-6 mb-6">
+                <span class="text-4xl font-extrabold text-slate-900">₹19,999</span>
+                <span class="text-slate-500 text-sm font-medium">/month</span>
+              </div>
+
+              <ul class="space-y-3.5 text-sm text-slate-600 border-t border-slate-100 pt-6">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Advanced SEO</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Google Ads Management</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Social Media + Content</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Detailed Analytics</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md shadow-brand-600/30 transition-all">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="rounded-3xl p-8 bg-white border border-slate-200 service-card-shadow flex flex-col justify-between hover:border-slate-300 transition-all">
+            <div>
+              <div class="text-base font-bold text-slate-900">Premium Plan</div>
+              <p class="text-xs text-slate-500 mt-1">For established businesses</p>
+
+              <div class="mt-6 mb-6">
+                <span class="text-4xl font-extrabold text-slate-900">₹34,999</span>
+                <span class="text-slate-500 text-sm font-medium">/month</span>
+              </div>
+
+              <ul class="space-y-3.5 text-sm text-slate-600 border-t border-slate-100 pt-6">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Full Digital Marketing</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Website Development</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Priority Support</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-brand-600 text-xs"></i>
+                  <span>Custom Strategy</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3 rounded-xl border border-brand-600 text-brand-600 hover:bg-brand-50 font-semibold text-sm transition-colors">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-t border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600">
+            Testimonials
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+            What My Clients Say
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            Real stories. Real results. Here's what some of my clients have to say about working with me.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Testimonial 1 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/80 service-card-shadow flex flex-col justify-between">
+            <div>
+              <p class="text-slate-600 text-sm italic leading-relaxed">
+                "Jaimin's digital marketing strategies really helped our business grow. We saw a huge increase in leads within just a few months!"
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" 
+                  alt="Rahul Mehta" 
+                  class="w-10 h-10 rounded-full object-cover border border-slate-200"
+                  onerror="this.src='https://placehold.co/100x100/e2e8f0/475569?text=RM'"
+                />
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Rahul Mehta</h4>
+                  <span class="text-[11px] text-slate-500">E-Commerce Business</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs flex gap-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/80 service-card-shadow flex flex-col justify-between">
+            <div>
+              <p class="text-slate-600 text-sm italic leading-relaxed">
+                "Professional, creative and always delivers on time. Highly recommend for anyone looking to grow online."
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" 
+                  alt="Sneha Iyer" 
+                  class="w-10 h-10 rounded-full object-cover border border-slate-200"
+                  onerror="this.src='https://placehold.co/100x100/e2e8f0/475569?text=SI'"
+                />
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Sneha Iyer</h4>
+                  <span class="text-[11px] text-slate-500">Real Estate Business</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs flex gap-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200/80 service-card-shadow flex flex-col justify-between">
+            <div>
+              <p class="text-slate-600 text-sm italic leading-relaxed">
+                "Great communication and real focus on results. Our social media engagement has never been better!"
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img 
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" 
+                  alt="Arjun Nair" 
+                  class="w-10 h-10 rounded-full object-cover border border-slate-200"
+                  onerror="this.src='https://placehold.co/100x100/e2e8f0/475569?text=AN'"
+                />
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Arjun Nair</h4>
+                  <span class="text-[11px] text-slate-500">Hospitality Business</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs flex gap-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600">
+              Blog
+            </span>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+              Latest Insights & Tips
+            </h2>
+            <p class="text-slate-600 text-sm mt-1">
+              Simple guides, tips and trends to help you grow your business online.
+            </p>
+          </div>
+          <div>
+            <a href="#contact" class="px-5 py-2.5 rounded-full border border-brand-600 text-brand-600 hover:bg-brand-50 text-sm font-semibold transition-colors">
+              View All Articles
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Blog 1 -->
+          <article class="rounded-2xl border border-slate-200 overflow-hidden group hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="h-44 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=600&auto=format&fit=crop" 
+                  alt="SEO Tips" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=SEO+Tips'"
+                />
+              </div>
+              <div class="p-5">
+                <span class="text-xs text-slate-400 font-medium">Aug 28, 2025</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-2 group-hover:text-brand-600 transition-colors leading-snug">
+                  5 SEO Tips to Get More Organic Traffic in 2025
+                </h3>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:gap-2 transition-all">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog 2 -->
+          <article class="rounded-2xl border border-slate-200 overflow-hidden group hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="h-44 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" 
+                  alt="Google Ads Guide" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Google+Ads'"
+                />
+              </div>
+              <div class="p-5">
+                <span class="text-xs text-slate-400 font-medium">Aug 20, 2025</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-2 group-hover:text-brand-600 transition-colors leading-snug">
+                  How Google Ads Can Boost Your Business
+                </h3>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:gap-2 transition-all">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog 3 -->
+          <article class="rounded-2xl border border-slate-200 overflow-hidden group hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="h-44 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" 
+                  alt="Social Media Trends" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Social+Media'"
+                />
+              </div>
+              <div class="p-5">
+                <span class="text-xs text-slate-400 font-medium">Aug 12, 2025</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-2 group-hover:text-brand-600 transition-colors leading-snug">
+                  Social Media Trends to Watch in 2025
+                </h3>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:gap-2 transition-all">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog 4 -->
+          <article class="rounded-2xl border border-slate-200 overflow-hidden group hover:shadow-lg transition-all flex flex-col justify-between">
+            <div>
+              <div class="h-44 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&auto=format&fit=crop" 
+                  alt="Content Marketing" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Content+Marketing'"
+                />
+              </div>
+              <div class="p-5">
+                <span class="text-xs text-slate-400 font-medium">Aug 5, 2025</span>
+                <h3 class="text-sm font-bold text-slate-900 mt-2 group-hover:text-brand-600 transition-colors leading-snug">
+                  The Power of Content Marketing for Brand Growth
+                </h3>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:gap-2 transition-all">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-darkSurface text-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Contact Details (Requested Updated Info) -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-400">
+              Get In Touch
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              Let's Work Together
+            </h2>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-md">
+              Have a project in mind or want to know more? Feel free to reach out. I'd love to hear from you!
+            </p>
+
+            <div class="space-y-4 pt-4 text-sm">
+              <!-- Phone -->
+              <a href="tel:+919745168707" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-brand-500 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center text-base group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Call / WhatsApp</div>
+                  <div class="text-sm font-semibold text-white tracking-wide">+91 9745168707</div>
+                </div>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:jaimingeorge124@gmail.com" class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-brand-500 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center text-base group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Email Address</div>
+                  <div class="text-sm font-semibold text-white">jaimingeorge124@gmail.com</div>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center text-base">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Location</div>
+                  <div class="text-sm font-semibold text-white">Bangalore, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-darkCard rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl">
+              <form id="contactForm" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Name Input -->
+                  <div>
+                    <label for="userName" class="block text-xs font-semibold text-slate-300 mb-1.5">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="userName" 
+                      required 
+                      placeholder="e.g. Rahul Sharma" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"
+                    />
+                  </div>
+
+                  <!-- Email Input -->
+                  <div>
+                    <label for="userEmail" class="block text-xs font-semibold text-slate-300 mb-1.5">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="userEmail" 
+                      required 
+                      placeholder="name@company.com" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <!-- Service Selector -->
+                <div>
+                  <label for="userService" class="block text-xs font-semibold text-slate-300 mb-1.5">Service Required</label>
+                  <select 
+                    id="userService" 
+                    required 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-slate-300 focus:outline-none focus:border-brand-500 transition-colors"
+                  >
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="SEO Optimization">SEO Optimization</option>
+                    <option value="Google & Meta Ads">Google & Meta Ads</option>
+                    <option value="Social Media Marketing">Social Media Marketing</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Full Digital Marketing Strategy">Full Digital Marketing Strategy</option>
+                  </select>
+                </div>
+
+                <!-- Message Box -->
+                <div>
+                  <label for="userMessage" class="block text-xs font-semibold text-slate-300 mb-1.5">Message</label>
+                  <textarea 
+                    id="userMessage" 
+                    rows="4" 
+                    required 
+                    placeholder="Tell me about your project goals and budget..." 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  type="submit" 
+                  class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-brand-600/30"
+                >
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-10 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Logo Brand -->
+        <a href="#" class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-extrabold text-sm">
+            JG
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white block">Jaimin George</span>
+            <span class="text-[10px] text-brand-400">Digital Marketing</span>
+          </div>
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400 text-xs">
+          <a href="#home" class="hover:text-white transition-colors">Home</a>
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#work" class="hover:text-white transition-colors">Portfolio</a>
+          <a href="#industries" class="hover:text-white transition-colors">Industries</a>
+          <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#blog" class="hover:text-white transition-colors">Blog</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4 text-sm">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-brand-400 hover:border-brand-500 transition-colors" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-pink-400 hover:border-pink-500 transition-colors" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="border-t border-slate-900 mt-8 pt-6 text-center text-slate-500 text-[11px]">
+        © 2026 Jaimin George. All rights reserved. Built for modern digital dominance.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.replace('fa-xmark', 'fa-bars');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.replace('fa-bars', 'fa-xmark');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.replace('fa-xmark', 'fa-bars');
+      });
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.getElementById('toastMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Trigger Toast notification
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      // Clear the form
+      contactForm.reset();
+
+      // Automatically hide after 4.5 seconds
+      setTimeout(() => {
+        toast.classList.add('translate-y-32', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 4500);
+    });
+  </script>
+</body>
+</html>
